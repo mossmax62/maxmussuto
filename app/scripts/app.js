@@ -51,7 +51,7 @@ angular
   })
 .run(function($rootScope){
   $rootScope.max="Max Mussuto App";
-  $rootScope.user=null;
+  
 
 });
   

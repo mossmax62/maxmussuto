@@ -8,12 +8,12 @@
  * Controller of the maxmussutoApp
  */
 angular.module('maxmussutoApp')
-  .controller('PelisCtrl', function (pelis) {
+  .controller('PelisCtrl', function (pelisSrvc,$scope,localStorageService) {
     
     $scope.tipo=$routeParams.tipo;
         $scope.search = function () {
             $scope.load = true;
-            movieService.getMovies({query: $scope.buscar,type:'movie',id:$routeParams.tipo}).$promise.then(function (data) {
+            pelisSrvc.getMovies({query: $scope.buscar,type:'movie',id:$routeParams.tipo}).$promise.then(function (data) {
                 $scope.movies = data.results
                 for (var i = 0; i < $scope.movies.length; i++) {
                     $scope.movies[i].icon = 'favorite'

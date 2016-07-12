@@ -8,7 +8,7 @@
  * Service in the maxmussutoApp.
  */
 angular.module('maxmussutoApp')
-  .service('pelis', function ($resource) {
+  .service('pelisSrvc', function ($resource) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var apikey = 'aa3edba062fc9d710be22c80f4c8e146';
         var url='http://api.themoviedb.org/3/:type/:id'
