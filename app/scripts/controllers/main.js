@@ -8,7 +8,7 @@
  * Controller of the maxmussutoApp
  */
 angular.module('maxmussutoApp')
-  .controller('MainCtrl', function ($scope,$firebaseObject) {
+  .controller('MainCtrl', function ($scope,$firebaseObject,AuthService) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,7 +17,15 @@ angular.module('maxmussutoApp')
 
 
 
-function toggleSignIn() {
+$scope.login=function(){
+  AuthService.login();
+  console.log("login");
+};
+$scope.logout=function(){
+  AuthService.logout();
+  console.log("logout");
+};
+/*function toggleSignIn() {
       if (!firebase.auth().currentUser) {
         // [START createprovider]
         var provider = new firebase.auth.GoogleAuthProvider();
@@ -115,5 +123,5 @@ function initApp() {
     window.onload = function() {
       initApp();
     };
-
+*/
   });

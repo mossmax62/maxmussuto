@@ -1,7 +1,8 @@
 
 
-  <div class="jumbotron" ng-controller=main>
-<md-button ng-href="" id="quickstart-sign-in">Sing in with Google</md-button>
+  <div class="jumbotron" ng-controller="MainCtrl">
+<md-button ng-click="login()">Sing in with Google</md-button>
+<md-button ng-click="logout()">Log out</md-button>
           <!-- Container where we'll display the user details -->
           <div class="container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>

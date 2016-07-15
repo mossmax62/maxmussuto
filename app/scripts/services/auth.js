@@ -13,9 +13,12 @@ angular.module('maxmussutoApp')
     var currentUser;
 
   return {
+
     login: function() { 
+      console.log(firebase.auth().currentUser);
     	if (!firebase.auth().currentUser) {
         // [START createprovider]
+        console.log("login service");
         var provider = new firebase.auth.GoogleAuthProvider();
         // [END createprovider]
         // [START addscopes]
@@ -50,7 +53,7 @@ angular.module('maxmussutoApp')
         });
      }
  },
-    logout: function() { firebase.auth().signOut(); },
+    logout: function() { firebase.auth().signOut();console.log("logout"); },
     isLoggedIn: function() { if (firebase.auth().currentUser) {return true}else{return false}; },
     currentUser: function() { return currentUser; }
     

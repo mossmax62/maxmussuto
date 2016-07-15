@@ -50,8 +50,8 @@ angular
     .accentPalette('orange');
   })
 .run(function($rootScope){
-  $rootScope.max="Max Mussuto App";
-  $rootScope.user=null;
+  $rootScope.max="$$$$$";
+  
 
 });
   
