@@ -30,6 +30,47 @@ angular.module('maxmussutoApp')
           var token = result.credential.accessToken;
           // The signed-in user info.
           var user = result.user;
+          currentUser=user;
+          //Obtencion de informacion 
+          firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+        
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var refreshToken = user.refreshToken;
+          var providerData = user.providerData;
+          // [START_EXCLUDE]
+          document.getElementById('user-image').src=photoURL;
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          //document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify({
+            displayName: displayName,
+            email: email,
+            emailVerified: emailVerified,
+            photoURL: photoURL,
+            isAnonymous: isAnonymous,
+            uid: uid,
+            refreshToken: refreshToken,
+            providerData: providerData
+          }, null, '  ');
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE]
+      
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-account-details').textContent = 'null';
+          document.getElementById('quickstart-oauthtoken').textContent = 'null';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE]
+        // [END_EXCLUDE]
+      });
           // [START_EXCLUDE]
           document.getElementById('quickstart-oauthtoken').textContent = token;
           // [END_EXCLUDE]

@@ -8,6 +8,13 @@
 body {
   padding: 0;
 }
+.circular {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

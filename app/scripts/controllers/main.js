@@ -17,14 +17,7 @@ angular.module('maxmussutoApp')
 
 
 
-$scope.login=function(){
-  AuthService.login();
-  console.log("login");
-};
-$scope.logout=function(){
-  AuthService.logout();
-  console.log("logout");
-};
+
 /*function toggleSignIn() {
       if (!firebase.auth().currentUser) {
         // [START createprovider]
