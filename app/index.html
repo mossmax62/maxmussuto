@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="maxmussutoApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -16,24 +16,33 @@
     <!-- endbuild -->
     
   </head>
-  <body ng-app="maxmussutoApp">
+  <body>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
     <md-toolbar md-scroll-shrink>
-    <div class="md-toolbar-tools">{{max}}</div>
+    <div layout="row"  ng-controller="HeaderCtrl">
+    <div></div>
+    <div>{{titulo}}</div>
+    <div>
+    <md-button ng-click="login()" ng-hide="loginDisable">Google Login</md-button>
+    <md-button ng-click="logout()" ng-hide="logoutDisable">Log out</md-button></div>
+    <div><img class="circular" id="user-image" src></img></div>
+    </div>
+    </md-toolbar>
 
-  </md-toolbar>
+    
+
     <!-- Add your site or application content here -->
     <div layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="space-between center">
 
   <div>
     <md-button href="#/">Home</md-button>
-    <md-button href="#/bi">Inteligencia de Negocios</md-button>
-    <md-button href="#/pelis">Pelis</md-button>
-    <md-button ng-href="#/about">About</md-button>
-    <md-button ng-href="#/contact">Contact</md-button>
+    <md-button href="#/bi">I</md-button>
+    <md-button href="#/pelis">II</md-button>
+    <md-button ng-href="#/about">III</md-button>
+    <md-button ng-href="#/contact">IV</md-button>
 
     </div>
 </div>
@@ -45,7 +54,7 @@
     <div class="row" layout-align="center">
       
         
-        <div > Max Mussuto </div>
+        <div > ----- </div>
         
       
     </div>
@@ -88,6 +97,8 @@
         <script src="scripts/controllers/bi.js"></script>
         <script src="scripts/controllers/pelis.js"></script>
         <script src="scripts/services/pelis.js"></script>
+        <script src="scripts/services/auth.js"></script>
+        <script src="scripts/controllers/header.js"></script>
         <!-- endbuild -->
 
 
